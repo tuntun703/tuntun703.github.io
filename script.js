@@ -140,9 +140,9 @@ function loadFootballImages() {
     
     // ဓာတ်ပုံများကို array အဖြစ်သတ်မှတ်မည် (လက်တွေ့တွင် သင့်ဓာတ်ပုံများဖြင့်အစားထိုးပါ)
     const images = [
-        { src: 'football1.jpg', alt: 'ဘောလုံးကစားနေစဉ်' },
-        { src: 'football2.jpg', alt: 'အသင်းနှင့်အတူ' },
-        { src: 'football3.jpg', alt: 'ပြိုင်ပွဲတစ်ခုတွင်' }
+        { src: 'img/football1.jpg', alt: 'ဘောလုံးကစားနေစဉ်' },
+        { src: 'img/football2.jpg', alt: 'အသင်းနှင့်အတူ' },
+        { src: 'img/football3.jpg', alt: 'ပြိုင်ပွဲတစ်ခုတွင်' }
     ];
     
     // gallery အတွင်းရှိ eski content များကိုရှင်းလင်းမည်

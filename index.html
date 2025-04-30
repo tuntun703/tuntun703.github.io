@@ -79,7 +79,7 @@
 /* အရောင်ပြောင်းခလုတ်အတွက် style */
 .dark-theme {
     background-color: #222;
-    color: #eee;
+    color: #a8a5a5;
 }
 
 .dark-theme .container {
@@ -148,14 +148,72 @@ button:hover, .btn:hover {
 .dark-theme .btn:hover {
     background-color: #2980b9;
 }
-    </style>
+
+/* Social Media Links Styles */
+.social-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-links h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.dark-theme .social-links h3 {
+    color: #3498db;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: transform 0.3s ease;
+}
+
+.dark-theme .social-icon {
+    color: #ecf0f1;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon img {
+    margin-bottom: 5px;
+}
+
+.social-icon span {
+    font-size: 0.8em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .social-icons {
+        gap: 15px;
+    }
     
+    .social-icon img {
+        width: 25px;
+    }
+}
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>မင်္ဂလာပါ ကျွန်တော့်အတ္ထုပ္ပတ္တိစာမျက်နှာမှ ကြိုဆိုပါတယ်</h1>
             <p>ဘုန်းတော်ကြီးသင်ပညာရေးကျောင်း၊ ၁၁တန်းကျောင်းသား</p>
+            <button id="theme-toggle">Dark Theme</button>
         </header>
 
         <section>
@@ -169,12 +227,10 @@ button:hover, .btn:hover {
             <div class="interest">
                 <h3>ဘောလုံးကန်ခြင်း</h3>
                 <p>ဘောလုံးကန်ရတာက ကျွန်တော့်အတွက် အကောင်းဆုံးအားကစားတစ်ခုပါ။ အသင်းနဲ့ကစားရတာ၊ နည်းဗျူဟာတွေတွေးခေါ်ရတာ၊ အားကစားစိတ်ဓာတ်တွေရရှိရတာကို နှစ်သက်ပါတယ်။</p>
-            </div>
-            
-            <div class="interest">
-                <h3>စိုက်ပျိုးရေး (မြေမဲ့စိုက်ပျိုးနည်း - Hydroponic)</h3>
-                <p>စိုက်ပျိုးရေးလောကမှာ အထူးသဖြင့် Hydroponic (မြေမဲ့စိုက်ပျိုးနည်း) နည်းပညာကို အထူးစိတ်ဝင်စားပါတယ်။ ဒီနည်းပညာက ရေနဲ့အာဟာရဓာတ်ပျော်ရည်တွေကိုသုံးပြီး မြေမလိုဘဲ အပင်တွေကိုစိုက်ပျိုးနိုင်တဲ့အတွက် မြို့ပြမှာနေထိုင်သူတွေအတွက် အထူးသင့်တော်ပါတယ်။</p>
-                <p>ကျွန်တော် Hydroponic နည်းနဲ့ ဟင်းသီးဟင်းရွက်လေးတွေ စမ်းသပ်စိုက်ပျိုးဖို့ စီစဉ်နေပါတယ်။</p>
+                
+                <button id="football-btn">ကျွန်တော့်ဘောလုံးဓာတ်ပုံများကိုကြည့်ရန်</button>
+                
+                <div id="football-gallery"></div>
             </div>
 
             <div class="interest">
@@ -195,6 +251,7 @@ button:hover, .btn:hover {
                         <li>ပိုးမွှားနှင့်ရောဂါကင်းစင်သည်</li>
                         <li>မြို့ပြဧရိယာများတွင်လည်းစိုက်ပျိုးနိုင်သည်</li>
                     </ul>
+                    <p>ကျွန်တော် Hydroponic နည်းနဲ့ ဟင်းသီးဟင်းရွက်လေးတွေ စမ်းသပ်စိုက်ပျိုးဖို့ စီစဉ်နေပါတယ်။</p>
                 </div>
             </div>
 
@@ -206,10 +263,32 @@ button:hover, .btn:hover {
         </section>
 
         <footer>
-            <p>ကျေးဇူးတင်ပါတယ်။ ကျွန်တော့်အတ္ထုပ္ပတ္တိစာမျက်နှာကို လာရောက်ကြည့်ရှုပေးတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။</p>
+            <div class="social-links">
+                <h3>ကျွန်တော့်ကို ဆက်သွယ်ရန်</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="30">
+                        <span></span>
+                    </a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30">
+                        <span></span>
+                    </a>
+                    <a href="https://t.me/sawhtunhtun" target="_blank" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111644.png" alt="Telegram" width="30">
+                        <span></span>
+                    </a>
+                    <a href="mailto:youremail@gmail.com" class="social-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email" width="30">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <p>ကျွန်တော့်အတ္ထုပ္ပတ္တိစာမျက်နှာကို လာရောက်ကြည့်ရှုပေးတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။</p>
             <p>© 2023 ကျွန်တော်၏ကိုယ်ပိုင်စာမျက်နှာ</p>
             <p>စဝ်ထု်ယဝ်ယိုင်</p>
         </footer>
+
     </div>
     <script src="script.js"></script>
 </body>
