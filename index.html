@@ -44,7 +44,112 @@
             font-size: 0.9em;
             color: #7f8c8d;
         }
+        
+        /* အခြေခံ fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hydroponic အပိုင်းအတွက် style */
+#hydroponic-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#hydroponic-info.expanded {
+    max-height: 1000px; /* လုံလောက်သောအမြင့် */
+}
+
+#hydroponic-benefit {
+    font-weight: bold;
+    color: #27ae60;
+    transition: opacity 0.5s ease;
+    min-height: 2em;
+    margin: 10px 0;
+}
+
+/* အရောင်ပြောင်းခလုတ်အတွက် style */
+.dark-theme {
+    background-color: #222;
+    color: #eee;
+}
+
+.dark-theme .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.dark-theme h1, 
+.dark-theme h2, 
+.dark-theme h3 {
+    color: #3498db;
+}
+
+/* ဘောလုံးဓာတ်ပုံပြခန်းအတွက် style */
+#football-gallery {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#football-gallery.show {
+    display: grid;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ခလုတ်များအတွက် style */
+button, .btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #27ae60;
+}
+
+.dark-theme button, 
+.dark-theme .btn {
+    background-color: #3498db;
+}
+
+.dark-theme button:hover, 
+.dark-theme .btn:hover {
+    background-color: #2980b9;
+}
     </style>
+    
 </head>
 <body>
     <div class="container">
@@ -71,6 +176,28 @@
                 <p>စိုက်ပျိုးရေးလောကမှာ အထူးသဖြင့် Hydroponic (မြေမဲ့စိုက်ပျိုးနည်း) နည်းပညာကို အထူးစိတ်ဝင်စားပါတယ်။ ဒီနည်းပညာက ရေနဲ့အာဟာရဓာတ်ပျော်ရည်တွေကိုသုံးပြီး မြေမလိုဘဲ အပင်တွေကိုစိုက်ပျိုးနိုင်တဲ့အတွက် မြို့ပြမှာနေထိုင်သူတွေအတွက် အထူးသင့်တော်ပါတယ်။</p>
                 <p>ကျွန်တော် Hydroponic နည်းနဲ့ ဟင်းသီးဟင်းရွက်လေးတွေ စမ်းသပ်စိုက်ပျိုးဖို့ စီစဉ်နေပါတယ်။</p>
             </div>
+
+            <div class="interest">
+                <h3>စိုက်ပျိုးရေး (မြေမဲ့စိုက်ပျိုးနည်း - Hydroponic)</h3>
+                <p>စိုက်ပျိုးရေးလောကမှာ အထူးသဖြင့် Hydroponic (မြေမဲ့စိုက်ပျိုးနည်း) နည်းပညာကို အထူးစိတ်ဝင်စားပါတယ်။</p>
+                
+                <button id="hydroponic-btn">မြေမဲ့စိုက်ပျိုးနည်း အကြောင်း ပိုမိုသိရှိရန်</button>
+                
+                <div id="hydroponic-info">
+                    <p>Hydroponic ဆိုတာက မြေမသုံးဘဲ ရေနဲ့အာဟာရပျော်ရည်တွေကိုသုံးပြီး အပင်တွေကိုစိုက်ပျိုးတဲ့နည်းပညာတစ်ခုပါ။</p>
+                    
+                    <h4>အဓိကအကျိုးကျေးဇူးများ:</h4>
+                    <div id="hydroponic-benefit">ရေကို 90% အထိ သက်သာစေသည်</div>
+                    
+                    <ul>
+                        <li>ပုံမှန်ထက် 30-50% ပိုမိုမြန်ဆန်စွာကြီးထွားသည်</li>
+                        <li>မြေဆီလွှာမလိုအပ်ပါ</li>
+                        <li>ပိုးမွှားနှင့်ရောဂါကင်းစင်သည်</li>
+                        <li>မြို့ပြဧရိယာများတွင်လည်းစိုက်ပျိုးနိုင်သည်</li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
 
         <section>
@@ -81,7 +208,9 @@
         <footer>
             <p>ကျေးဇူးတင်ပါတယ်။ ကျွန်တော့်အတ္ထုပ္ပတ္တိစာမျက်နှာကို လာရောက်ကြည့်ရှုပေးတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။</p>
             <p>© 2023 ကျွန်တော်၏ကိုယ်ပိုင်စာမျက်နှာ</p>
+            <p>စဝ်ထု်ယဝ်ယိုင်</p>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
